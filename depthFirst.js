@@ -9,8 +9,8 @@ const graph = {
     f: []
 }
 
-//Traversing a graph data structure
-
+//Iterative Solution
+/*
 const depthFirstPrint = (graph, source) => {
     const stack = [source]
 
@@ -20,6 +20,16 @@ const depthFirstPrint = (graph, source) => {
         for(let neighbor of graph[current]){
             stack.push(neighbor) 
         }
+    }
+}
+*/
+
+//Recursive Solution
+
+const depthFirstPrint = (graph, source) => {
+    console.log(source)
+    for(let neighbor of graph[source]){
+        depthFirstPrint(graph, neighbor)
     }
 }
 
